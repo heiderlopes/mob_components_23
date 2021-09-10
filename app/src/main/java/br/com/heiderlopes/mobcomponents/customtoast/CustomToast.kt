@@ -20,8 +20,10 @@ object CustomToast {
         duration: Int = Toast.LENGTH_SHORT
     ) {
         val toastLayout: View = activity.layoutInflater.inflate(R.layout.custom_toast, null)
+
         val toast = Toast(activity)
         toastLayout.findViewById<LinearLayout>(R.id.bgToast).background = backgroundToast
+
         toastLayout.findViewById<TextView>(R.id.tvMessageToast).text = message
         val ivIconToast = toastLayout.findViewById<ImageView>(R.id.ivIconToast)
         if (icon == null) {
