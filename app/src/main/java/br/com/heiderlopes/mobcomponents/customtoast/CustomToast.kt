@@ -4,6 +4,7 @@ import android.app.Activity
 import android.graphics.drawable.Drawable
 import android.view.View
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
@@ -20,8 +21,7 @@ object CustomToast {
     ) {
         val toastLayout: View = activity.layoutInflater.inflate(R.layout.custom_toast, null)
         val toast = Toast(activity)
-        toast.view = toastLayout
-        //toast.view.background = backgroundToast
+        toastLayout.findViewById<LinearLayout>(R.id.bgToast).background = backgroundToast
         toastLayout.findViewById<TextView>(R.id.tvMessageToast).text = message
         val ivIconToast = toastLayout.findViewById<ImageView>(R.id.ivIconToast)
         if (icon == null) {
